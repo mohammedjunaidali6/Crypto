@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto-Currency</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/bitcoin-3222162__340.webp">
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+    <script src="./script.js" defer></script>
+</head>
+
+<body class="container-fluid">
+    <!--     <div id="loader"></div> -->
+    <header>
+
+        <div id="first">
+            <img width="130px" height="70px" src="./images/Png Gif 8sec.gif">
+            <a id="cryptoid" href="./index.html"> <img class="crypto" id="imgcry" width="130px" height="70px"
+                    src="./images/crypto.png"></a>
+        </div>
+        <div class="w-100 mt-3" id="second">
+            <div>
+                <div class="input-group">
+                    <span class="input-group-text"> <img width="20px" height="20px" src="./images/search.jfif"></span>
+                    <input onkeyup="myFunction()" id="searchbox" class="form-control" type="text"
+                        placeholder="Search here">
+                </div>
+            </div>
+        </div>
+        <div id="third">
+            <button class="btn btn-danger " id="login" onclick="btnClick(this.id)">Login</button>
+            <button class="btn btn-success " id="signup" onclick="btnClick(this.id)">Sign up</button>
+            <button type="button" id="filter" class="btn btn-primary " data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"> Filter</button>
+        </div>
+        <div id="burger">
+            <nav class="navbar  navbar-dark  text-white">
+                <div class="container-fluid">
+                    <button class="navbar-toggler bg-dark" data-bs-target="#menu" data-bs-toggle="collapse">
+                        <span class="navbar-toggler-icon "></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="menu">
+                        <div>
+                            <button class="btn btn-danger " id="login" onclick="btnClick(this.id)">Login</button>
+                            <button class="btn btn-success " id="signup" onclick="btnClick(this.id)">Sign
+                                up</button>
+                            <button type="button" id="filter" class="btn btn-primary " data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                Filter
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+
+    </header>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Price Range</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="display: flex;" id="range">
+                        <input id="minvalue" class="form-control w-50" type="number" placeholder="$0" />
+                        <p class="m-1">to</p>
+                        <input id="maxvalue" class="form-control w-50" type="number" placeholder="$99,999" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="checkrange" onclick="rangeclick()" type="button" class="btn btn-primary log">Check
+                        Range</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="row">
+        <div id="slideshow1" class="col-2 left">
+            <div class="slider-frame">
+                <div class="slide-images">
+                    <div class="img-container">
+                        <img src="./images/image8.jpg">
+                    </div>
+                    <div class="img-container">
+                        <img src="./images/image11.jpeg">
+                    </div>
+                    <div class="img-container">
+                        <img src="./images/image10.jpg">
+                    </div>
+                    <div class="img-container">
+                        <img src="./images/image12.jpg">
+                    </div>
+                    <div class="img-container">
+                        <img src="./images/image13.webp">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tablediv" class="col-8">
+            <table class="table table-borderless" id="mytable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Crypto Currency</th>
+                        <th>Price</th>
+                        <th>Volume 24h</th>
+                        <th>Market Cap</th>
+                        <th>1h</th>
+                        <th>24h</th>
+                        <th>Weekly</th>
+                    </tr>
+                </thead>
+                <tbody id="bodydata"></tbody>
+            </table>
+            <h2 id="noresults" style="text-align: center;"></h2>
+        </div>
+        <div id="slideshow2" class="col-2 ">
+            <div class="col-2 right">
+                <div class="right-img">
+                    <img src="./images/gif1.gif" alt="">
+                </div>
+                <div class="right-img">
+                    <img src="./images/gif2.gif" alt="">
+                </div>
+                <div class="right-img" id="rg">
+                    <img src="./images/giff3.gif" alt="">
+                </div>
+                <div id="top-right">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+    <footer>
+        <div id="coinmarketcap-widget-marquee" coins="1,1027,825,15888,2010,5426,3794,512" currency="USD" theme="light"
+            transparent="false" show-symbol-logo="true"></div>
+    </footer>
+
+</body>
+
+</html>
